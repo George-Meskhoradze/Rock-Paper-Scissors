@@ -13,10 +13,32 @@ let computerScoreCount = 0;
 const playerScoreValue = localStorage.getItem("playerScore");
 if (playerScoreValue !== null) {
   playerScoreCount = parseInt(playerScoreValue);
+  playerScore.textContent = playerScoreCount;
+  if(playerScoreCount >= 3){
+    playerScoreCount = 0
+    computerScoreCount = 0
+    localStorage.setItem('playerScore', playerScoreCount);
+    localStorage.setItem('computerScore', computerScoreCount);
+    playerScore.textContent = playerScoreCount;
+    computerScore.textContent = computerScoreCount;
+  }
+  
 }
+
 const computerScoreValue = localStorage.getItem("computerScore");
 if (computerScoreValue !== null) {
   computerScoreCount = parseInt(computerScoreValue);
+  computerScore.textContent = computerScoreCount;
+  if(computerScoreCount >= 3){
+    playerScoreCount = 0
+    computerScoreCount = 0
+    localStorage.setItem('playerScore', playerScoreCount);
+    localStorage.setItem('computerScore', computerScoreCount);
+    playerScore.textContent = playerScoreCount;
+    computerScore.textContent = computerScoreCount;
+  }
+  
+  
 }
 
 
@@ -94,6 +116,7 @@ function Winner() {
   }
 
 }
+
 
 function refreshGame() {
   btn.addEventListener("click", ()=> {
