@@ -2,9 +2,9 @@ const player = document.querySelector(".player");
 const computer = document.querySelector(".computer");
 const playerScore = document.querySelector(".player-score");
 const computerScore = document.querySelector(".computer-score");
+const btn = document.querySelector(".btn-next")
 let buttons = document.querySelectorAll('.images [data-selection]');
 let button = document.querySelectorAll('.images-second [data-selection]');
-const btn = document.querySelector(".btn-next")
 let playerScoreCount = 0;
 let computerScoreCount = 0;
 
