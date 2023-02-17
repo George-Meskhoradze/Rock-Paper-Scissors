@@ -143,4 +143,371 @@ header .gamearea .btn-next {
   position: absolute;
   user-select: none;
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  header {
+    width: 600px;
+    position: absolute;
+    transform: translate(-50%, 10%);
+    top: 10%;
+    left: 50%;
+  }
+  header .header {
+    width: 100%;
+    height: 50px;
+    background: var(--white);
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .header .player, header .header .computer {
+    width: 450px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--black);
+    font-weight: 600;
+  }
+  header .header .score {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    background: var(--red);
+  }
+  header .header .score .player-score, header .header .score .line, header .header .score .computer-score {
+    font-size: 1.3rem;
+    color: var(--white);
+  }
+  header .gamearea {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid white;
+    background: rgb(0, 0, 0);
+    border-radius: 0px 0px 10px 10px;
+  }
+  header .gamearea .images {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  header .gamearea .images div:nth-child(1) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images div:nth-child(2) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images div {
+    width: 90px;
+    height: 90px;
+    background: var(--white);
+    border: 10px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+  header .gamearea .images div img {
+    width: 50px;
+    height: 50px;
+  }
+  header .gamearea .vs {
+    width: 110px;
+    filter: invert(100%);
+  }
+  header .gamearea .images-second {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  header .gamearea .images-second div:nth-child(1) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images-second div:nth-child(2) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images-second div {
+    width: 90px;
+    height: 90px;
+    background: var(--white);
+    border: 10px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+  header .gamearea .images-second div img {
+    width: 50px;
+    height: 50px;
+  }
+  header .gamearea .btn-next {
+    width: 110px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 7px;
+    background: var(--win);
+    color: var(--black);
+    top: 80%;
+    margin: auto;
+    position: absolute;
+    user-select: none;
+    cursor: pointer;
+  }
+}
+@media (max-width: 700px) {
+  header {
+    width: 400px;
+    position: absolute;
+    transform: translate(-50%, 10%);
+    top: 10%;
+    left: 50%;
+  }
+  header .header {
+    width: 100%;
+    height: 40px;
+    background: var(--white);
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .header .player, header .header .computer {
+    width: 150px;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--black);
+    font-weight: 600;
+  }
+  header .header .score {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    background: var(--red);
+  }
+  header .header .score .player-score, header .header .score .line, header .header .score .computer-score {
+    font-size: 1rem;
+    color: var(--white);
+  }
+  header .gamearea {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid white;
+    background: rgb(0, 0, 0);
+    border-radius: 0px 0px 10px 10px;
+  }
+  header .gamearea .images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  header .gamearea .images div:nth-child(1) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images div:nth-child(2) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images div {
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    border: 6px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+  header .gamearea .images div img {
+    width: 30px;
+    height: 30px;
+  }
+  header .gamearea .vs {
+    width: 80px;
+    filter: invert(100%);
+  }
+  header .gamearea .images-second {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  header .gamearea .images-second div:nth-child(1) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images-second div:nth-child(2) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images-second div {
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    border: 6px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+  header .gamearea .images-second div img {
+    width: 30px;
+    height: 30px;
+  }
+  header .gamearea .btn-next {
+    width: 90px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 7px;
+    background: var(--win);
+    color: var(--black);
+    top: 80%;
+    margin: auto;
+    position: absolute;
+    user-select: none;
+    cursor: pointer;
+  }
+}
+@media (max-width: 430px) {
+  header {
+    width: 280px;
+    position: absolute;
+    transform: translate(-50%, 10%);
+    top: 10%;
+    left: 50%;
+  }
+  header .header {
+    width: 100%;
+    height: 40px;
+    background: var(--white);
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  header .header .player, header .header .computer {
+    width: 100px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--black);
+    font-weight: 600;
+  }
+  header .header .score {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80px;
+    height: 100%;
+    background: var(--red);
+  }
+  header .header .score .player-score, header .header .score .line, header .header .score .computer-score {
+    font-size: 0.9rem;
+    color: var(--white);
+  }
+  header .gamearea {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid white;
+    background: rgb(0, 0, 0);
+    border-radius: 0px 0px 10px 10px;
+  }
+  header .gamearea .images {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  header .gamearea .images div:nth-child(1) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images div:nth-child(2) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images div {
+    width: 45px;
+    height: 45px;
+    background: var(--white);
+    border: 3px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+  header .gamearea .images div img {
+    width: 20px;
+    height: 20px;
+  }
+  header .gamearea .vs {
+    width: 50px;
+    filter: invert(100%);
+  }
+  header .gamearea .images-second {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  header .gamearea .images-second div:nth-child(1) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images-second div:nth-child(2) img {
+    transform: rotate(90deg);
+  }
+  header .gamearea .images-second div {
+    width: 45px;
+    height: 45px;
+    background: var(--white);
+    border: 3px solid var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+  }
+  header .gamearea .images-second div img {
+    width: 30px;
+    height: 30px;
+  }
+  header .gamearea .btn-next {
+    width: 60px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 7px;
+    background: var(--win);
+    color: var(--black);
+    top: 80%;
+    margin: auto;
+    position: absolute;
+    user-select: none;
+    cursor: pointer;
+  }
 }/*# sourceMappingURL=style.css.map */
