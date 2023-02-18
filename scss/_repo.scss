@@ -46,7 +46,16 @@
       border: 1px solid white;
       background: rgb(0, 0, 0);
       border-radius: 0px 0px 10px 10px;
+      
+      .textlog {
+        .your {
+          font-size: 2.1rem;
+        }
   
+        .result {
+          font-size: 1.9rem;
+        }
+      }
   
   
       .images {
@@ -138,7 +147,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-weight: 600;
         border-radius: 7px;
         background: var(--win);
@@ -216,7 +225,15 @@
       background: rgb(0, 0, 0);
       border-radius: 0px 0px 10px 10px;
   
+      .textlog {
+        .your {
+          font-size: 1.7rem;
+        }
   
+        .result {
+          font-size: 1.4rem;
+        }
+      }
   
       .images {
         display: flex;
@@ -302,12 +319,12 @@
       }
   
       .btn-next {
-        width: 90px;
+        width: 100px;
         height: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 600;
         border-radius: 7px;
         background: var(--win);
@@ -394,7 +411,18 @@
       background: rgb(0, 0, 0);
       border-radius: 0px 0px 10px 10px;
   
+      .textlog {
+        transform: translate(-50%,15%);
+        top: 15%;
+        .your {
+          width: 150px;
+          font-size: 1.3rem;
+        }
   
+        .result {
+          font-size: 1rem;
+        }
+      }
   
       .images {
         display: flex;
@@ -429,8 +457,8 @@
           transition: all 0.4s ease-in-out;
   
           img {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
           }
         }
       }
@@ -480,12 +508,12 @@
       }
   
       .btn-next {
-        width: 60px;
+        width: 80px;
         height: 25px;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
         font-weight: 600;
         border-radius: 7px;
         background: var(--win);

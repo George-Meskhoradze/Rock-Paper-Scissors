@@ -3,6 +3,9 @@ const computer = document.querySelector(".computer");
 const playerScore = document.querySelector(".player-score");
 const computerScore = document.querySelector(".computer-score");
 const btn = document.querySelector(".btn-next")
+const score = document.querySelector(".textlog")
+const gameover = document.querySelector(".your")
+const answer = document.querySelector(".result")
 let buttons = document.querySelectorAll('.images [data-selection]');
 let button = document.querySelectorAll('.images-second [data-selection]');
 let playerScoreCount = 0;
@@ -12,7 +15,7 @@ let computerScoreCount = 0;
 const playerScoreValue = localStorage.getItem("playerScore");
 if (playerScoreValue !== null) {
   playerScoreCount = parseInt(playerScoreValue);
-  playerScore.textContent = playerScoreCount;
+  playerScore.textContent = playerScoreCount.toString();
 
   if(playerScoreCount == 3){
     playerScoreCount = 0
@@ -29,7 +32,7 @@ if (playerScoreValue !== null) {
 const computerScoreValue = localStorage.getItem("computerScore");
 if (computerScoreValue !== null) {
   computerScoreCount = parseInt(computerScoreValue);
-  computerScore.textContent = computerScoreCount;
+  computerScore.textContent = computerScoreCount.toString();
 
   if(computerScoreCount == 3){
     playerScoreCount = 0
@@ -38,10 +41,8 @@ if (computerScoreValue !== null) {
     localStorage.setItem('computerScore', computerScoreCount);
     playerScore.textContent = playerScoreCount;
     computerScore.textContent = computerScoreCount;
-    console.log('player score equals 3');
   }
 }
-
 
 
 
@@ -98,6 +99,13 @@ function Winner() {
     playerScoreCount++;
     localStorage.setItem('playerScore', playerScoreCount);
     playerScore.textContent = playerScoreCount;
+    if(playerScoreCount == 3){
+      btn.style.background = 'red'
+      btn.textContent = 'PLAY AGAIN'
+      score.style.display = 'flex'
+      btn.style.fontSize = "1rem"
+      answer.textContent = "You Win"
+    }
   } else {
     playerMe.style.background = 'var(--lose)'
     computerGame.style.background = 'var(--win)'
@@ -105,6 +113,14 @@ function Winner() {
     computerScoreCount++;
     localStorage.setItem('computerScore', computerScoreCount);
     computerScore.textContent = computerScoreCount;
+    if(computerScoreCount == 3){
+      btn.style.background = 'red'
+      btn.textContent = 'PLAY AGAIN'
+      btn.style.fontSize = "1rem"
+      score.style.display = 'flex'
+      answer.textContent = "You lose"
+      answer.style.color = 'red'
+    }
   }
 
 }
@@ -162,4 +178,52 @@ if (window.matchMedia("(max-width:430px)").matches) {
       computerGame.style.transform = "translateX(-15px)";
     });
   }
+
+  function Winner() {
+    let playerMe = document.querySelector(".images [data-selection]:not([style*='display: none'])");
+    let playerSelectionName = playerMe.dataset.selection;
+    let computerSelectionName = computerGame.dataset.selection;
+    let result;
+
+
+    if (playerSelectionName  === computerSelectionName) {
+      playerMe.style.background = 'var(--win)'
+      computerGame.style.background = 'var(--win)'
+      result = "Draw";
+    } else if (
+      playerSelectionName === 'rock' && computerSelectionName === 'scissors' ||
+      playerSelectionName === 'paper' && computerSelectionName === 'rock' ||           
+      playerSelectionName === 'scissors' && computerSelectionName === 'paper')
+      {
+
+      playerMe.style.background = 'var(--win)'
+      computerGame.style.background = 'var(--lose)'
+      result = "You win!";
+      playerScoreCount++;
+      localStorage.setItem('playerScore', playerScoreCount);
+      playerScore.textContent = playerScoreCount;
+      if(playerScoreCount == 3){
+        btn.style.background = 'red'
+        btn.textContent = 'PLAY AGAIN'
+        score.style.display = 'flex'
+        btn.style.fontSize = "0.7rem"
+        answer.textContent = "You Win"
+      }
+    } else {
+      playerMe.style.background = 'var(--lose)'
+      computerGame.style.background = 'var(--win)'
+      result = "Computer wins!";
+      computerScoreCount++;
+      localStorage.setItem('computerScore', computerScoreCount);
+      computerScore.textContent = computerScoreCount;
+      if(computerScoreCount == 3){
+        btn.style.background = 'red'
+        btn.textContent = 'PLAY AGAIN'
+        btn.style.fontSize = "0.7rem"
+        score.style.display = 'flex'
+        answer.textContent = "You lose"
+        answer.style.color = 'red'
+      }
+    }
+  }  
 }
