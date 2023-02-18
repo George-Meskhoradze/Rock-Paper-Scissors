@@ -103,7 +103,7 @@ function Winner() {
       btn.style.background = 'red'
       btn.textContent = 'PLAY AGAIN'
       score.style.display = 'flex'
-      btn.style.fontSize = "1rem"
+      btn.style.fontSize = "1.2rem"
       answer.textContent = "You Win"
     }
   } else {
@@ -116,7 +116,7 @@ function Winner() {
     if(computerScoreCount == 3){
       btn.style.background = 'red'
       btn.textContent = 'PLAY AGAIN'
-      btn.style.fontSize = "1rem"
+      btn.style.fontSize = "1.2rem"
       score.style.display = 'flex'
       answer.textContent = "You lose"
       answer.style.color = 'red'
@@ -149,6 +149,23 @@ function computerTurn() {
 
 
 
+
+
+
+
+//this is responsive of 1200px //
+
+
+
+
+
+
+
+
+
+
+
+
 if (window.matchMedia("(max-width:1200px)").matches) {
   // code for handling clicks on buttons for mobile devices
   for (let i = 0; i < buttons.length; i++) {
@@ -157,7 +174,75 @@ if (window.matchMedia("(max-width:1200px)").matches) {
       computerGame.style.transform = "translateX(-80px)";
     });
   }
+
+  
+function Winner() {
+  let playerMe = document.querySelector(".images [data-selection]:not([style*='display: none'])");
+  let playerSelectionName = playerMe.dataset.selection;
+  let computerSelectionName = computerGame.dataset.selection;
+  let result;
+
+
+  if (playerSelectionName  === computerSelectionName) {
+    playerMe.style.background = 'var(--win)'
+    computerGame.style.background = 'var(--win)'
+    result = "Draw";
+  } else if (
+    playerSelectionName === 'rock' && computerSelectionName === 'scissors' ||
+    playerSelectionName === 'paper' && computerSelectionName === 'rock' ||           
+    playerSelectionName === 'scissors' && computerSelectionName === 'paper')
+    {
+
+    playerMe.style.background = 'var(--win)'
+    computerGame.style.background = 'var(--lose)'
+    result = "You win!";
+    playerScoreCount++;
+    localStorage.setItem('playerScore', playerScoreCount);
+    playerScore.textContent = playerScoreCount;
+    if(playerScoreCount == 3){
+      btn.style.background = 'red'
+      btn.textContent = 'PLAY AGAIN'
+      score.style.display = 'flex'
+      btn.style.fontSize = "1rem"
+      answer.textContent = "You Win"
+    }
+  } else {
+    playerMe.style.background = 'var(--lose)'
+    computerGame.style.background = 'var(--win)'
+    result = "Computer wins!";
+    computerScoreCount++;
+    localStorage.setItem('computerScore', computerScoreCount);
+    computerScore.textContent = computerScoreCount;
+    if(computerScoreCount == 3){
+      btn.style.background = 'red'
+      btn.textContent = 'PLAY AGAIN'
+      btn.style.fontSize = "1rem"
+      score.style.display = 'flex'
+      answer.textContent = "You lose"
+      answer.style.color = 'red'
+    }
+  }
+
+}
+
 } 
+
+
+
+
+
+
+
+
+
+
+//this is responsive of 700px //
+
+
+
+
+
+
 
 
 if (window.matchMedia("(max-width:700px)").matches) {
@@ -168,7 +253,74 @@ if (window.matchMedia("(max-width:700px)").matches) {
       computerGame.style.transform = "translateX(-40px)";
     });
   }
+
+  
+function Winner() {
+  let playerMe = document.querySelector(".images [data-selection]:not([style*='display: none'])");
+  let playerSelectionName = playerMe.dataset.selection;
+  let computerSelectionName = computerGame.dataset.selection;
+  let result;
+
+
+  if (playerSelectionName  === computerSelectionName) {
+    playerMe.style.background = 'var(--win)'
+    computerGame.style.background = 'var(--win)'
+    result = "Draw";
+  } else if (
+    playerSelectionName === 'rock' && computerSelectionName === 'scissors' ||
+    playerSelectionName === 'paper' && computerSelectionName === 'rock' ||           
+    playerSelectionName === 'scissors' && computerSelectionName === 'paper')
+    {
+
+    playerMe.style.background = 'var(--win)'
+    computerGame.style.background = 'var(--lose)'
+    result = "You win!";
+    playerScoreCount++;
+    localStorage.setItem('playerScore', playerScoreCount);
+    playerScore.textContent = playerScoreCount;
+    if(playerScoreCount == 3){
+      btn.style.background = 'red'
+      btn.textContent = 'PLAY AGAIN'
+      score.style.display = 'flex'
+      btn.style.fontSize = "0.8rem"
+      answer.textContent = "You Win"
+    }
+  } else {
+    playerMe.style.background = 'var(--lose)'
+    computerGame.style.background = 'var(--win)'
+    result = "Computer wins!";
+    computerScoreCount++;
+    localStorage.setItem('computerScore', computerScoreCount);
+    computerScore.textContent = computerScoreCount;
+    if(computerScoreCount == 3){
+      btn.style.background = 'red'
+      btn.textContent = 'PLAY AGAIN'
+      btn.style.fontSize = "0.8rem"
+      score.style.display = 'flex'
+      answer.textContent = "You lose"
+      answer.style.color = 'red'
+    }
+  }
+
 }
+
+}
+
+
+
+
+
+
+
+
+//this is responsive of 430px //
+
+
+
+
+
+
+
 
 if (window.matchMedia("(max-width:430px)").matches) {
   // code for handling clicks on buttons for mobile devices
